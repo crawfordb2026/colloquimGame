@@ -14,9 +14,8 @@
 <body>
     <h1>Code Dash</h1>
     <p class="question">{{ question }}</p>
-    <form action="/submit" method="POST">
+    <form action="/game" method="POST">
         <input type="text" name="answer" autofocus autocomplete="off">
-        <input type="hidden" name="start_time" value="{{ start_time }}">
         <br>
         <button type="submit">Submit</button>
     </form>
