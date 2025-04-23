@@ -47,6 +47,13 @@ def result():
     end_time = time.time()
     total_time = round(end_time - session.get('start_time', end_time), 2)
     return render_template('result.html', score=session.get('score', 0), total_time=total_time)
+    
+@app.route("/submit", methods=["POST"])
+def submit():
+    answer = request.form.get("answer")
+    # Check the answer and do something with it
+    return redirect("/result")  # or render_template with result
+
 
 import os
 
