@@ -1,0 +1,33 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Result - Code Dash</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 40px; background: #e0f7fa; }
+        .score { font-size: 28px; color: #00796b; margin-top: 20px; }
+        .time { font-size: 22px; color: #00695c; margin-bottom: 30px; }
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Over!</h1>
+    <p class="score">Your Score: {{ score }} / 5</p>
+    <p class="time">Time Taken: {{ total_time }} seconds</p>
+    <form action="/">
+        <button type="submit">Play Again</button>
+    </form>
+</body>
+</html>
