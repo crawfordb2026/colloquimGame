@@ -1,11 +1,12 @@
-# app.py
 from flask import Flask, render_template, request, redirect, url_for, session
 import random
 import time
+import os
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key_here'  # Replace with a better secret key in production
+app.secret_key = 'your_secret_key_here'  # Replace with a secure key in production
 
+# Sample questions
 questions = [
     {"question": "What is 5 + 7?", "answer": "12"},
     {"question": "What comes next? 2, 4, 6, ?", "answer": "8"},
@@ -47,18 +48,7 @@ def result():
     end_time = time.time()
     total_time = round(end_time - session.get('start_time', end_time), 2)
     return render_template('result.html', score=session.get('score', 0), total_time=total_time)
-    
-@app.route("/submit", methods=["POST"])
-def submit():
-    answer = request.form.get("answer")
-    # Check the answer and do something with it
-    return redirect("/result")  # or render_template with result
-
-
-import os
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
-
-
