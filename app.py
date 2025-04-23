@@ -48,8 +48,10 @@ def result():
     total_time = round(end_time - session.get('start_time', end_time), 2)
     return render_template('result.html', score=session.get('score', 0), total_time=total_time)
 
+import os
+
 if __name__ == '__main__':
-    import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
+
 
