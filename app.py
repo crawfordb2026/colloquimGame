@@ -8,7 +8,6 @@ app.secret_key = 'your_secret_key_here'  # Replace with a secure key in producti
 
 # Sample questions
 questions = [
-    questions = [
     {"question": "What is the derivative of sin(x)?", "answer": "cos(x)"},
     {"question": "What is the antiderivative of 2x?", "answer": "x^2"},
     {"question": "What is (5^2 - 3^2)?", "answer": "16"},
@@ -19,8 +18,6 @@ questions = [
     {"question": "What is 2^4?", "answer": "16"},
     {"question": "What’s the square root of 81?", "answer": "9"},
     {"question": "What’s the integral of sec^2(x)?", "answer": "tan(x)"}
-]
-
 ]
 
 @app.route('/')
